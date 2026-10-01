@@ -1,0 +1,49 @@
+<!-- 周报与月报 -->
+
+<view class="item">
+<view class="order1">心电数据周报</view>
+<view class="order2">心电数据月报</view>
+</view>
+
+
+
+<view>
+<view class="banxin">
+<view class="line"></view>
+<!-- <view class="dingwei"><image src="/images/bar/yishengzixun.png" style="width: 70px;height: 70px;"></image><view>医生评估</view></view> -->
+<!-- 历史数据 -->
+<view class="history">
+<view class="order">
+<view>xx年x月x日</view>
+<view class="text">
+<text>心率状况：健康</text>
+<text class="right">测试时间：13:38</text>
+</view>
+</view>
+</view>
+<view class="line"></view>
+
+<view class="history">
+<view class="order">
+<view>xx年x月x日</view>
+<view class="text">
+<text>心率状况：偏低</text>
+<text class="right">测试时间：13:38</text>
+</view>
+</view>
+</view>
+<view class="line"></view>
+
+<view class="history">
+<view class="order">
+<view>xx年x月x日</view>
+<view class="text">
+<text>心率状况：偏高</text>
+<text class="right">测试时间：13:38</text>
+</view>
+</view>
+</view>
+<view class="line"></view>
+<view class="end">暂无其他历史记录</view>
+</view>
+</view>

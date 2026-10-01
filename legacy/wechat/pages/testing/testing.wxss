@@ -1,0 +1,13 @@
+/* pages/testing/testing.wxss */
+.btn1{
+  
+  display: block;
+  margin: 80% auto;
+  background-color: skyblue;
+  width: 260px;
+  height: 60px;
+  border-radius: 40%;
+  font-size: 30px;
+  line-height: 60px;
+  text-align: center;
+}

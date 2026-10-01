@@ -1,0 +1,5 @@
+page {background:#f3f7f7;color:#17353e;font-family:sans-serif;padding:24rpx;box-sizing:border-box;}
+.card {background:white;border-radius:20rpx;padding:24rpx;margin-bottom:20rpx;}
+.title {font-size:36rpx;font-weight:bold;}.muted {color:#60777d;font-size:25rpx;}
+button {margin-top:14rpx;font-size:28rpx;} canvas {width:100%;height:220px;}
+.metric {font-size:48rpx;font-weight:bold;}.device {padding:18rpx 0;border-bottom:1px solid #eee;}

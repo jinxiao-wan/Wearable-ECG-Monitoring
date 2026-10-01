@@ -1,0 +1,5 @@
+{
+ "pages": ["pages/monitor/monitor"],
+ "window": {"navigationBarTitleText": "Wearable ECG", "navigationBarBackgroundColor": "#113b45", "navigationBarTextStyle": "white"},
+ "style": "v2", "sitemapLocation": "sitemap.json"
+}

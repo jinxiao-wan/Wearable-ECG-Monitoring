@@ -1,0 +1,6 @@
+{
+ "description": "Reconstructed wearable ECG prototype",
+ "miniprogramRoot": "./", "compileType": "miniprogram", "appid": "touristappid",
+ "projectname": "wearable-ecg-monitoring",
+ "setting": {"es6": true, "enhance": true, "minified": true, "urlCheck": true}
+}

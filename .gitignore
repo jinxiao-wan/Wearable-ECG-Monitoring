@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+outputs/
+wechat/project.private.config.json
+wechat/config.local.js
+.DS_Store

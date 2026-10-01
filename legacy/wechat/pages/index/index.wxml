@@ -1,0 +1,10 @@
+<view>
+<view class="banxin">
+  <view class="zhishitu">
+<image src="/images/bar/zhi_Dao.jpg" mode="aspectFit"></image>
+</view>
+<view class="tishi">请按图示正确佩戴</view>
+<navigator url="../line/line" class="kaishi" >开始检测</navigator>
+</view>
+</view>
+<image src="../../images/bar/logo.jpg" class="logo"></image>

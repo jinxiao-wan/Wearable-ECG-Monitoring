@@ -1,0 +1,46 @@
+/* pages/line/line.wxss */
+.all{
+  position: relative;
+  height: 500px;
+  /* background-color: rgb(23, 145, 167); */
+}
+.end{
+  display: block;
+  margin-bottom: 20px;
+  /* background-color: pink; */
+}
+
+.top1{
+  position: absolute;
+  /* background-color: rgb(51, 137, 180); */
+  background-color: rgb(137, 207, 240);
+  /* top: 5%;
+  left: 4%; */
+  padding: 2% 19%;
+  /* color: rgb(21, 184, 70); */
+  color: rgb(255, 255, 255);
+  
+}
+.top2{
+  position: absolute;
+  /* background-color: rgb(51, 139, 180); */
+  background-color: rgb(137, 207, 240);
+  /* top: 8%; */
+  right: 0;
+  padding: 2% 15%;
+  line-height: 61px;
+  /* color: rgb(21, 184, 70); */
+  color: rgb(255, 255, 255);
+  font-size: large;
+  /* border-radius: 15px; */
+}
+.shuzi{
+  font-size: 30px;
+}
+.zi{
+  text-align: center;
+}
+.battle{
+  padding-bottom: 5%;
+  text-align: center;
+}

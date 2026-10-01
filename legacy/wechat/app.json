@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/line/line",
+    "pages/testing/testing",
+    "pages/index/index",
+    "pages/category/category",
+    "pages/me/me"
+    
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#3389B4",
+    "navigationBarTitleText": "心电图",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "selectedColor": "#096",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "color": "#87CEFA",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "心电设置",
+        "iconPath": "/images/bar/home1.png",
+        "selectedIconPath": "/images/bar/home2.png"
+      },{
+        "pagePath": "pages/category/category",
+        "text": "历史数据",
+        "iconPath": "/images/bar/cate1.png",
+        "selectedIconPath": "/images/bar/cate2.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的设置",
+        "iconPath": "/images/bar/me1.png",
+        "selectedIconPath": "/images/bar/me2.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

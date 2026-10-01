@@ -1,0 +1,22 @@
+{
+  "sample_rate_hz": 360.0,
+  "samples": 650000,
+  "duration_seconds": 1805.5555555555557,
+  "detected_beats": 2274,
+  "median_rr_bpm": 75.26132404181185,
+  "count_based_bpm": 75.56676923076922,
+  "method": "offline 0.5\u201340 Hz bandpass; 5\u201320 Hz QRS candidates; median RR",
+  "channel": "MLII",
+  "units": "mV",
+  "source": "data/mitdb/100",
+  "annotation_evaluation": {
+    "reference_beats": 2273,
+    "true_positives": 2273,
+    "false_positives": 1,
+    "false_negatives": 0,
+    "precision": 0.9995602462620933,
+    "recall": 1.0,
+    "f1": 0.9997800747745768,
+    "tolerance_seconds": 0.1
+  }
+}

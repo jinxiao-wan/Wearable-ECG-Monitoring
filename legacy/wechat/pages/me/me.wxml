@@ -1,0 +1,53 @@
+<!--pages/me/me.wxml-->
+<view class="content">
+<!-- 登陆相关 -->
+<view class="head">
+<view class="headlcon">
+<image src="/images/bar/me1.png" style="width: 70px;height: 70px;"></image>
+</view>
+<view class="login">
+<navigator url="../login/login"hover-class="navigator-hover">{{nickName}}</navigator>
+</view>
+<view class="detail">
+<text></text>
+</view>
+</view>
+<view class="hr"></view>
+<!-- 列表导航相关 -->
+<navigator url="../testing/testing" class="item">
+<view class="order">绑定设备</view>
+<view class="detail2">
+<text></text>
+</view>
+</navigator>
+<view class="line"></view>
+<view class="item">
+<view class="order">基本信息</view>
+<view class="detail2">
+<text></text>
+</view>
+</view>
+<view class="line"></view>
+<view class="item">
+<view class="order">紧急联系人</view>
+<view class="detail2">
+<text></text>
+</view>
+</view>
+<view class="line"></view>
+<view class="hr"></view>
+<view class="item">
+<view class="order">帮助</view>
+<view class="detail2">
+<text></text>
+</view>
+</view>
+<view class="line"></view>
+<view class="item">
+<view class="order">联系我们</view>
+<view class="detail2">
+<text></text>
+</view>
+</view>
+<view class="hr1"></view>
+</view>

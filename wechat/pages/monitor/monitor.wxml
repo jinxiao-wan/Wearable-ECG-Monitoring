@@ -1,0 +1,14 @@
+<view class="card"><view class="title">Wearable ECG</view><view class="muted">Research prototype · raw ADC counts · no diagnostic interpretation</view>
+<view>{{status}}</view><view class="metric">{{bpm}} BPM</view><view class="muted">{{demo ? 'Simulated heart rate' : 'Heart rate reported by sensor packet'}} · quality code: {{quality}}</view></view>
+<view class="card"><canvas id="ecg" canvas-id="ecg"></canvas><view class="muted">Raw waveform · auto-scaled amplitude · latest samples</view>
+<view>Sampling rate (Hz; verify device setting)</view><input type="digit" value="{{sampleRate}}" bindinput="changeRate" disabled="{{recording || demo}}"/>
+<button bindtap="startDemo" disabled="{{demo}}">Start simulation (no sensor)</button><button bindtap="disconnect">Stop / disconnect</button></view>
+<view class="card"><view class="title">Bluetooth</view><button bindtap="scan" disabled="{{demo}}">Scan devices</button><button bindtap="stopScan">Stop scanning</button>
+<view class="device" wx:for="{{devices}}" wx:key="deviceId" data-id="{{item.deviceId}}" bindtap="connect">{{item.name || item.localName || 'Unnamed device'}} · {{item.RSSI}} dBm<view class="muted">{{item.deviceId}}</view></view>
+<view wx:if="{{connected}}">Choose ECG notification characteristic:</view>
+<button wx:for="{{characteristics}}" wx:key="uuid" data-index="{{index}}" bindtap="subscribe">{{item.uuid}}<view class="muted">Service: {{item.serviceId}}</view></button>
+<button wx:if="{{connected}}" bindtap="sendStart">Send configured start command (0x04)</button><view class="muted">Valid packets {{packetCount}} · bad checksums {{badChecksums}}</view></view>
+<view class="card"><view class="title">Recording</view><view>{{sampleCount}} samples · {{recording ? 'recording' : 'stopped'}}</view>
+<button bindtap="startRecording" disabled="{{recording}}">Start new recording</button><button bindtap="stopRecording">Stop recording</button><button bindtap="exportCsv">Save / share CSV</button></view>
+<view class="card"><view class="title">Local history</view><view class="muted">Latest 10 exports, saved on this device</view>
+<view class="device" wx:for="{{history}}" wx:key="filePath" data-index="{{index}}" bindtap="shareHistory">{{item.started}}<view>{{item.source}} · {{item.samples}} samples · {{item.sampleRate}} Hz · tap to share</view></view></view>

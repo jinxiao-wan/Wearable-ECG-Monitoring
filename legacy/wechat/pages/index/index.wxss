@@ -1,0 +1,30 @@
+.zhishitu{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 8%;
+  
+}
+.tishi{
+  margin-top: 50px;
+  text-align: center;
+  font-size: larger;
+}
+.kaishi{
+  display: block;
+  position: fixed;
+  left: 10%;
+  top: 80%;
+  height: 40px;
+  width: 80%;
+  background-color: rgb(137, 207, 240);
+  text-align: center;
+  border-radius: 10px;
+  line-height: 40px;
+}
+.logo{
+  width: 80px;
+  height: 80px;
+  position: fixed; 
+  left: 0;
+  top: 0;
+}
