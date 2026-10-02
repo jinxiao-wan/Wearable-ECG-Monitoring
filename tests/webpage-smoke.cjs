@@ -41,9 +41,24 @@ const path = require('node:path');
     await page.keyboard.press('Escape');assert.equal(await page.locator('#image-dialog').evaluate(d=>d.open),false);
     await page.locator('#raw').uncheck();await page.locator('#raw').check();
     fs.mkdirSync('outputs/webpage',{recursive:true});
-    await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,0);});
+    // Reload before captures to clear control focus and pending smooth scrolling.
+    async function prepareCapture(){
+      await page.reload({waitUntil:'networkidle'});
+      await page.waitForFunction(()=>document.getElementById('bpm').textContent!=='—');
+      await page.evaluate(async()=>{
+        document.activeElement?.blur();document.documentElement.style.scrollBehavior='auto';
+        for(const image of document.querySelectorAll('img:not(#enlarged-image)'))image.loading='eager';
+        await Promise.all([...document.querySelectorAll('img:not(#enlarged-image)')].map(image=>image.decode()));
+        window.scrollTo(0,0);
+      });
+      await page.waitForFunction(()=>window.scrollY===0 && document.querySelector('.site-header').getBoundingClientRect().top===0);
+    }
+    await prepareCapture();
+    await page.screenshot({path:'outputs/webpage/desktop-viewport.png'});
     await page.screenshot({path:'outputs/webpage/desktop.png',fullPage:true});
     await page.setViewportSize({width:390,height:844});
+    await prepareCapture();
+    await page.screenshot({path:'outputs/webpage/mobile-viewport.png'});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
     await page.screenshot({path:'outputs/webpage/mobile.png',fullPage:true});
     await page.locator('[data-image="assets/circuit-schematic.png"]').click();
