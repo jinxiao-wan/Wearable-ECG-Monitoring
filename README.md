@@ -22,7 +22,7 @@ The original 2022–2023 team project explored a flexible wearable ECG sensor wi
 | Signal processing | Original MATLAB figures, wavelet experiments and reconstructed analysis |
 | Outcomes | Completion-material summary and a carefully described utility-model grant notice |
 
-**My main documented contribution:** WeChat mini-program development. Hardware, mechanics, PCB and filtering were team work. This repository does not imply that one person developed every subsystem.
+**My main documented contribution:** PCB, filtering and WeChat mini-program development. Hardware, mechanics and PCB were team work. This repository does not imply that one person developed every subsystem.
 
 ## 1. Hardware architecture
 
