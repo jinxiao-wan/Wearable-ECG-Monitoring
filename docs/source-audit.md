@@ -6,7 +6,7 @@
 - `大眼仔仔小程序 (2)_1.zip`: WeChat pages, BLE parsing, charts and Excel-export code; bundled chart/Excel libraries; an old `.git` directory.
 - `结题.zip`: screenshots, proposal, presentation and a nested RAR. The RAR was inspected and extracted for the audit: reports, a commercial plan, photographs, summaries and patent paperwork, with no recovered firmware or CAD sources.
 
-The first-party originals are preserved in `legacy/`; old Git objects, local AppID configuration, bundled third-party libraries and private project documents are excluded. The rebuilt app uses native canvas and CSV instead of those bundled libraries. `docs/source-manifest.json` records hashes of the copied original source and record files. MATLAB text retains its original byte encoding in `legacy/`.
+The first-party originals are preserved in `legacy/`; old Git objects, local AppID configuration, bundled third-party libraries and private administrative documents are excluded. The rebuilt app uses native canvas and CSV instead of those bundled libraries. `docs/source-manifest.json` records hashes of the copied original source and record files. MATLAB text retains its original byte encoding in `legacy/`.
 
 ## Repairs and changes
 
@@ -31,3 +31,9 @@ The Python pipeline and browser demo are new reconstruction work. The rebuilt We
 ## Unavailable / unverified
 
 Physical flexible electrodes, hardware electronics, firmware, ADC calibration, BLE module identity and sample rate cannot be recreated from these software archives alone. Team documents describe a cloud/medical platform but do not contain its backend. MATLAB runtime and WeChat DevTools were unavailable here; hardware acquisition and phone export remain unverified.
+
+## Illustrated project archive
+
+At the user's request, the repository now includes selected original hardware, mechanical, PCB, prototype, software and team-process images in `demo/assets/`. Images from related-work and competitor slides are excluded so they are not confused with the team's own designs. The original reports and administrative pages are not republished. Source locations, source hashes, image preparation and published hashes are recorded in `docs/visual-sources.json`.
+
+Illustrated notes in `hardware/`, `pcb/`, `mechanical/` and `docs/development-process.md` extend the software reconstruction to present the whole documented project. The archives were checked for native SolidWorks, STEP/STL, PCB CAD and Gerber files; none were found.

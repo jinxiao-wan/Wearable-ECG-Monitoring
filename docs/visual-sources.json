@@ -1,0 +1,146 @@
+[
+  {
+    "path": "demo/assets/circuit-schematic.png",
+    "caption": "Circuit schematic showing TPS79333, BMD101 and a BLE module labelled CC2640R2F.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 19 / image45.png",
+    "source_sha256": "170b2fdda3dd7be72cc42a6cd898f624d507c045d9101c33aef8611d4e8323f3",
+    "published_sha256": "170b2fdda3dd7be72cc42a6cd898f624d507c045d9101c33aef8611d4e8323f3",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/pcb-layout.png",
+    "caption": "Original PCB layout screenshot with tracks, pads, vias and board boundary.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 19 / image46.png",
+    "source_sha256": "c079095567af303c6f47efcfd44eb51123d0e723284456c6087646debb471748",
+    "published_sha256": "c079095567af303c6f47efcfd44eb51123d0e723284456c6087646debb471748",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/electrode-concept.jpg",
+    "caption": "Original petal-shaped sensing electrode and circular reference concept.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 13 / image30.jpeg",
+    "source_sha256": "7bb5bae4df8ade1eb7e2a2ab19dac33c3b1546491256f988c941569c11bbdedc",
+    "published_sha256": "7bb5bae4df8ade1eb7e2a2ab19dac33c3b1546491256f988c941569c11bbdedc",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/round-enclosure-render.png",
+    "caption": "Original CAD render of a round housing with a recessed feature.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 20 / image47.png",
+    "source_sha256": "46cb05aec8b51f4794a04fe6d64748e746bb869ed06498aff8dc33264acac76e",
+    "published_sha256": "46cb05aec8b51f4794a04fe6d64748e746bb869ed06498aff8dc33264acac76e",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/round-enclosure-print.jpg",
+    "caption": "Photograph of the fabricated round part corresponding to the CAD render.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 20 / image48.png",
+    "source_sha256": "3f7db7d46699f9d5e2fb50075935660186329f5ca8080073f26230ac7fd87737",
+    "published_sha256": "11a8098ab4ed7604f4170a04dd44a57a353d69b1c1038ab74d8891d3244b7765",
+    "preparation": "EXIF orientation applied, scaled within 1800 px, JPEG encoded for web delivery"
+  },
+  {
+    "path": "demo/assets/electrode-arm-render.png",
+    "caption": "Original elongated petal-and-ring CAD render.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 20 / image49.png",
+    "source_sha256": "12cdfa4c6c878e263c29dd069164a1de531b6fbbc16944bd1416b67dc315e265",
+    "published_sha256": "12cdfa4c6c878e263c29dd069164a1de531b6fbbc16944bd1416b67dc315e265",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/enclosure-cover-render.png",
+    "caption": "Original CAD render of an elongated cover with a circular end.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 20 / image50.png",
+    "source_sha256": "2fafc797ad8c324da47e3b25cd53d5f23cf719aedc8247fa1d2f5345189f98d7",
+    "published_sha256": "2fafc797ad8c324da47e3b25cd53d5f23cf719aedc8247fa1d2f5345189f98d7",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/wearable-prototype.jpg",
+    "caption": "Original photograph of the white wearable enclosure prototype.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 20 / image51.jpeg",
+    "source_sha256": "f9154ec5d836eb1382583cbfd4b39949ddbd99af806f9220ba3380a49b184b88",
+    "published_sha256": "91e83020db87cf47e2c92d3d17296d4e141549c11581887252604380434cebcc",
+    "preparation": "EXIF orientation applied, scaled within 1800 px, JPEG encoded for web delivery"
+  },
+  {
+    "path": "demo/assets/original-app-monitor.png",
+    "caption": "Original WeChat monitoring interface screenshot.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 18 / image39.png",
+    "source_sha256": "e89d6d4f1fd038543b84d75cb06960b97227623f26d68e5119fe2dd647c69248",
+    "published_sha256": "e89d6d4f1fd038543b84d75cb06960b97227623f26d68e5119fe2dd647c69248",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/original-app-history.png",
+    "caption": "Original WeChat history-page mockup with placeholder entries.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 18 / image38.png",
+    "source_sha256": "fe1f63169bfe15dcae0157f0274b618c4d7e1a0624c5d07e6e2a3b58e730514b",
+    "published_sha256": "fe1f63169bfe15dcae0157f0274b618c4d7e1a0624c5d07e6e2a3b58e730514b",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/miniapp-development.png",
+    "caption": "Screenshot of original mini-program development code.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 18 / image40.png",
+    "source_sha256": "a1d6ec26d0ddd8db335cba0455db95bd78e75bdbb78d76ab7e66934924dbd194",
+    "published_sha256": "a1d6ec26d0ddd8db335cba0455db95bd78e75bdbb78d76ab7e66934924dbd194",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/original-ecg-trace.png",
+    "caption": "Original MATLAB signal-processing figure.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 14 / image32.png",
+    "source_sha256": "075863d8ab8be7cd93bfa20f806ee079465e615e841cbbc9b6041fee1ca5defc",
+    "published_sha256": "075863d8ab8be7cd93bfa20f806ee079465e615e841cbbc9b6041fee1ca5defc",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/original-wavelet-result.png",
+    "caption": "Original figure labelled soft-threshold processing.",
+    "source": "结题.zip / 结题/结题PPT.pptx / slide 14 / image33.png",
+    "source_sha256": "32d8b47f78bae13a8d9c1bbd864b92fcc567046e0e6abf82cfee6c2fad8433c8",
+    "published_sha256": "32d8b47f78bae13a8d9c1bbd864b92fcc567046e0e6abf82cfee6c2fad8433c8",
+    "preparation": "Copied unchanged"
+  },
+  {
+    "path": "demo/assets/manufactured-parts.jpg",
+    "caption": "Original photo montage: fabricated circular boards, a green board beside a ruler, and enclosure/electrode parts.",
+    "source": "结题.zip / 结题/结题材料.rar / 结题材料/S202210251157X-照片/部分实物图.jpg",
+    "source_sha256": "2dd50ef3be948050abed918aa10c9517ed7f63debd0e2ef89b72cf36e68e91bc",
+    "published_sha256": "f43a2b7612df6c1b3fe037bebd52bbbba7dfaa500b25b4903378cbd43105878d",
+    "preparation": "EXIF orientation applied, scaled within 1800 px, JPEG encoded for web delivery"
+  },
+  {
+    "path": "demo/assets/lab-discussion.jpg",
+    "caption": "Laboratory discussion with the project supervisor.",
+    "source": "结题.zip / 结题/结题材料.rar / 结题材料/S202210251157X-照片/实验室成员与导师讨论.jpg",
+    "source_sha256": "6e9f040f91e7f92981fb1b7989df23c4ce394c408b234c1dc5fb4471cb56d0ab",
+    "published_sha256": "e02f04f057db295af744d550287ff9fd1162b4884a96725eadc8cae8241a29b3",
+    "preparation": "EXIF orientation applied, scaled within 1800 px, JPEG encoded for web delivery"
+  },
+  {
+    "path": "demo/assets/printing-session.jpg",
+    "caption": "Supervisor-assisted prototyping session, filed as a 3D-printing activity in the original archive.",
+    "source": "结题.zip / 结题/结题材料.rar / 结题材料/S202210251157X-照片/导师协助3D打印.jpg",
+    "source_sha256": "d3557195acdef525b20bd0d5840b3ddbd9cb0be46df5ef7b063401f107f8f7f0",
+    "published_sha256": "15a1ea0b33a138e6e67ffc10388626e9bda9291d9b8ea5e8785574454d2cef28",
+    "preparation": "EXIF orientation applied, scaled within 1800 px, JPEG encoded for web delivery"
+  },
+  {
+    "path": "demo/assets/design-discussion.jpg",
+    "caption": "Team discussion during project development.",
+    "source": "结题.zip / 结题/结题材料.rar / 结题材料/S202210251157X-照片/成员食堂熄灯后讨论.jpg",
+    "source_sha256": "dded6bdc6461cddb9981285a1c5e1950aef1ef0292ee34603b0908f78440feeb",
+    "published_sha256": "7ecc0a9975cd40d8df20238a2509082285ac360c8c7839923ddd5fef4f9f8f10",
+    "preparation": "EXIF orientation applied, scaled within 1800 px, JPEG encoded for web delivery"
+  },
+  {
+    "path": "demo/assets/team-meeting.jpg",
+    "caption": "Original image of the team and supervisor meeting remotely.",
+    "source": "结题.zip / 结题/结题材料.rar / 结题材料/S202210251157X-照片/项目成员和导师合影.jpg",
+    "source_sha256": "f0773a966b244f7392b281599eee93f89c30b3484cd95ee9a3eb8580056cc76c",
+    "published_sha256": "4bee94c1dc84d7d5d9ba4c9ebaa075611c5bcd21606088f9d0240d6b3942b379",
+    "preparation": "EXIF orientation applied, scaled within 1800 px, JPEG encoded for web delivery"
+  }
+]

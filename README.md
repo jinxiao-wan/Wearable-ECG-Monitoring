@@ -1,26 +1,164 @@
 # Wearable ECG Monitoring
 
-A reconstruction of a 2022–2023 student wearable ECG project: Bluetooth acquisition in a WeChat mini program, offline signal processing, R-peak detection and heart-rate estimation.
+**A complete student engineering project: electrodes, hardware architecture, PCB design, SolidWorks enclosure studies, physical prototypes, WeChat software and ECG processing.**
 
-The uploaded project describes a BMD101 ECG chip, a BLE module and flexible electrodes. This repository restores the software and provides a reproducible demo using the supplied MIT-BIH recording. Sensor firmware, PCB CAD files and the original cloud backend were not present in the supplied materials.
+[**Open the project webpage →**](https://jinxiao-wan.github.io/Wearable-ECG-Monitoring/) · [Full picture gallery](docs/gallery.md) · [Development process](docs/development-process.md)
 
-## Open the webpage online
+The original 2022–2023 team project explored a flexible wearable ECG sensor with Bluetooth transmission to a WeChat mini program. This repository presents the team's original design figures and photographs, alongside a reproducible software reconstruction added in 2026.
 
-The GitHub Pages deployment publishes `demo/` at:
+![Fabricated circuit boards and wearable enclosure parts](demo/assets/manufactured-parts.jpg)
 
-**https://jinxiao-wan.github.io/Wearable-ECG-Monitoring/**
+*Original project photograph: circuit boards, enclosure parts and electrode-form prototypes.*
 
-One-time activation: in repository **Settings → Pages → Build and deployment → Source**, select **GitHub Actions**. Then open **Actions → Publish ECG webpage → Run workflow**, keeping branch `main`. The website becomes available after the deployment succeeds. Future changes to `demo/` publish automatically. No local commands, Python installation or sensor are needed to view the webpage.
+## Project at a glance
 
-## Run the demo locally (optional)
+| Workstream | What you can see in this repository |
+| --- | --- |
+| Hardware | Original circuit schematic, electrode concept and documented component chain |
+| PCB design | Circuit/layout images and photographs of manufactured boards |
+| SolidWorks / mechanical | Exported renders, round housing prototype and wearable enclosure iterations |
+| Prototyping | Laboratory, 3D-printing activity, discussion and team-meeting photographs |
+| WeChat software | Original app screenshots and code, plus the rebuilt acquisition app |
+| Signal processing | Original MATLAB figures, wavelet experiments and reconstructed analysis |
+| Outcomes | Completion-material summary and a carefully described utility-model grant notice |
 
-```bash
-git clone https://github.com/jinxiao-wan/Wearable-ECG-Monitoring.git
-cd Wearable-ECG-Monitoring
-python -m http.server 8000 --directory demo
+**My main documented contribution:** WeChat mini-program development. Hardware, mechanics, PCB and filtering were team work. This repository does not imply that one person developed every subsystem.
+
+## 1. Hardware architecture
+
+The original schematic combines the **TPS79333 regulator**, **BMD101 ECG chip** and a **BLE module labelled CC2640R2F**. The BMD101 sensor/reference inputs connect the electrode concept to the data-acquisition chain; serial RX/TX signals connect the acquisition stage and wireless module.
+
+![Original ECG acquisition circuit schematic](demo/assets/circuit-schematic.png)
+
+```mermaid
+flowchart TD
+  Electrode["Sensing and reference electrodes"] --> ECG["BMD101 ECG acquisition"]
+  Power["TPS79333 regulated supply"] --> ECG
+  Power --> BLE["BLE module"]
+  ECG -->|Serial data| BLE
+  BLE --> App["WeChat waveform and recording"]
+  App --> Analysis["MATLAB / Python offline analysis"]
 ```
 
-Open **http://localhost:8000**. No Python packages or sensor are required for the included browser demo. It shows actual public ECG data, filtered samples and detected R peaks. The WeChat app also has a separate **synthetic simulation mode**.
+[Hardware design and materials notes](hardware/README.md)
+
+## 2. PCB design
+
+The original presentation includes this routing screenshot. It documents the PCB design work, while the manufactured-part montage above shows physical board prototypes. Their exact revision relationship is not recorded.
+
+![Original PCB layout](demo/assets/pcb-layout.png)
+
+[PCB design documentation](pcb/README.md)
+
+## 3. SolidWorks, enclosure and electrodes
+
+The project materials describe SolidWorks modelling for the sensor shape and electrode geometry. The images below pair exported renders with fabricated parts.
+
+| Original round-part render | Fabricated round part |
+| --- | --- |
+| ![Round housing CAD render](demo/assets/round-enclosure-render.png) | ![Round prototype part](demo/assets/round-enclosure-print.jpg) |
+
+| Petal-and-ring form | Cover form |
+| --- | --- |
+| ![Petal-and-ring CAD render](demo/assets/electrode-arm-render.png) | ![Cover CAD render](demo/assets/enclosure-cover-render.png) |
+
+The team explored a petal-shaped sensing region, a circular reference region and replaceable contact elements around a reusable circuit board. PU, PDMS and PI are named as materials in the design concept; their final properties are not independently verified here.
+
+![Original electrode concept](demo/assets/electrode-concept.jpg)
+
+<p align="center"><img src="demo/assets/wearable-prototype.jpg" alt="Original white wearable enclosure prototype" width="380" /></p>
+
+*Original wearable prototype photograph.*
+
+[SolidWorks and mechanical design documentation](mechanical/README.md)
+
+## 4. The development process
+
+| Stage | Documented work |
+| --- | --- |
+| System concept | Define electrode sensing, acquisition, wireless transmission and phone display |
+| Design | Study electrode geometry, model the housing, draw the circuit and route the board |
+| Prototyping | Fabricate boards and mechanical parts, review them at the laboratory bench |
+| Acquisition software | Scan BLE devices, connect, decode samples, display a waveform and export data |
+| Signal experiments | Read MIT-BIH ECG data, explore filtering and compute heart rate |
+| Review and documentation | Discuss iterations, prepare presentations and completion materials |
+| 2026 reconstruction | Repair software, make analysis reproducible and publish this illustrated archive |
+
+| Supervisor-assisted prototyping | Laboratory review |
+| --- | --- |
+| ![Prototyping session](demo/assets/printing-session.jpg) | ![Laboratory discussion](demo/assets/lab-discussion.jpg) |
+
+| Team discussion | Remote project meeting |
+| --- | --- |
+| ![Team discussion](demo/assets/design-discussion.jpg) | ![Team and supervisor meeting](demo/assets/team-meeting.jpg) |
+
+These phases reconstruct the engineering workflow from the supplied evidence. They are not an exact dated manufacturing log.
+
+[Full illustrated development story](docs/development-process.md)
+
+## 5. WeChat software
+
+The original source includes BLE discovery, sample reception, waveform plotting and spreadsheet export. The reconstructed app adds buffered packet parsing, checksum validation, bounded recording, CSV export, actual local history and a hardware-free simulation mode.
+
+| Original monitoring interface | Original history concept |
+| --- | --- |
+| <img src="demo/assets/original-app-monitor.png" alt="Original WeChat monitor" width="250" /> | <img src="demo/assets/original-app-history.png" alt="Original history-page mockup" width="250" /> |
+
+*Historical screenshots from the source presentation. The history example contains placeholder entries.*
+
+[Rebuilt WeChat implementation](wechat/) · [WeChat setup guide](docs/wechat-setup.md)
+
+## 6. Signal-processing work
+
+| Original MATLAB signal figure | Original soft-threshold experiment |
+| --- | --- |
+| ![Original ECG signal figure](demo/assets/original-ecg-trace.png) | ![Original wavelet experiment](demo/assets/original-wavelet-result.png) |
+
+The 2026 pipeline analyzes each lead separately, uses the record's sampling rate, detects R peaks and compares them with the supplied annotations. The [webpage's ECG explorer](https://jinxiao-wan.github.io/Wearable-ECG-Monitoring/#results) lets visitors inspect the public sample and download the analysed minute without installing anything.
+
+## 7. Project outputs and credit
+
+The original archive contains proposals, presentations, a commercial plan, completion materials, source code and prototype photographs. It also includes a **19 July 2023 notice to grant a utility model**, titled **“可佩戴心电探测器”**, application **202222528798.X**, naming East China University of Science and Technology as applicant. The notice states that registration formalities remained necessary. Current patent status is not verified, and the administrative pages are not republished.
+
+Original team: **厉晨敏、毕墁莲、万金筱、叶婷婷、冯圣恺、袁亚宁**. Supervisor: **顾震**. Repository and 2026 software reconstruction: **Jinxiao Wan**. The original materials identify 万金筱 among the mini-program contributors; task assignments for some other members differ across the source documents, so individual ownership of every subsystem is not inferred.
+
+## Design files and evidence
+
+**The design pictures are included. Native CAD and fabrication files are missing from the uploaded archives.**
+
+| Asset | Status |
+| --- | --- |
+| Schematic, PCB layout and mechanical renders | Included as original design images |
+| Prototype and development photographs | Included |
+| MATLAB and WeChat source | Preserved, with repaired versions alongside |
+| SolidWorks SLDPRT/SLDASM/SLDDRW, STEP/STL | Not supplied |
+| Altium SchDoc/PcbDoc/PrjPcb, Gerber/drill files | Not supplied |
+| Firmware, complete BOM, calibration records | Not supplied |
+| Proposed medical/cloud platform | No backend supplied |
+
+[Complete asset inventory](docs/asset-inventory.md) · [Image provenance](docs/visual-sources.json) · [Original-source audit](docs/source-audit.md)
+
+## Repository guide
+
+| Folder | Contents |
+| --- | --- |
+| `hardware/` | Hardware architecture, recovered component roles and materials concept |
+| `pcb/` | Schematic, layout and physical-board evidence |
+| `mechanical/` | SolidWorks render/prototype comparisons and asset inventory |
+| `demo/` | Complete public project webpage and original project image collection |
+| `wechat/` | Rebuilt BLE acquisition, simulation, chart and recording app |
+| `src/ecg/` | Python decoding, filtering, beat detection and evaluation |
+| `matlab/` | Repaired analysis and optional wavelet denoising |
+| `legacy/` | Original first-party source for comparison |
+| `data/mitdb/` | One deduplicated copy of supplied MIT-BIH record 100 |
+| `docs/` | Illustrated process, gallery, provenance, limitations and results |
+| `tests/` | Signal/parser/BLE tests and a webpage browser check |
+
+## Viewing and publishing
+
+Open **https://jinxiao-wan.github.io/Wearable-ECG-Monitoring/** to view the project. The `Publish ECG webpage` workflow deploys `demo/` automatically after changes. GitHub Pages must use **GitHub Actions** as its publishing source.
+
+The commands below are optional developer instructions for reproducing the analysis. Visitors can use the webpage directly.
 
 ## Run the analysis
 
@@ -46,19 +184,6 @@ python -m ecg.cli --csv path/to/ecg-export.csv --sample-rate 512 --out outputs/s
 ```
 
 **512 Hz is a configurable example, not a verified hardware specification.** Sensor exports remain in raw ADC counts until calibration is known. Dataset samples are in mV. Verify the device rate and packet protocol before interpreting timing or amplitude.
-
-## What is included
-
-| Folder | Purpose |
-| --- | --- |
-| `wechat/` | Rebuilt app: BLE discovery, characteristic selection, checksummed streaming decoding, live raw chart, simulation, bounded recording, CSV export and local history |
-| `src/ecg/` | Python reader, offline filters, R-peak detector, annotation evaluation and packet parser |
-| `matlab/` | Repaired channel-based analysis and optional original-style wavelet denoising |
-| `demo/` | Static browser explorer of the first ten seconds, with minute-level measurements |
-| `data/mitdb/` | One deduplicated copy of supplied record 100 |
-| `legacy/` | Original first-party source for comparison; not the runnable app |
-| `tests/` | Signal, annotation, parser, recording and mocked BLE tests |
-| `docs/` | Setup, architecture, source audit, limitations and measured results |
 
 ## WeChat and MATLAB
 
@@ -93,8 +218,9 @@ npm test
 
 Node.js 18 or newer is sufficient for the JavaScript tests; no npm dependencies are required. GitHub Actions repeats the checks and a first-minute analysis.
 
-## Provenance and project credit
 
-The original project was a team effort. Uploaded materials identify 万金筱 among the mini-program contributors; this reconstruction is maintained in Jinxiao Wan's repository. Original collaborators retain credit for their work. [Source audit](docs/source-audit.md) distinguishes recovered code, repaired components and unavailable parts.
+## Source and use notes
 
-Public database attribution and its separate license are in [data/README.md](data/README.md). No blanket license is assigned to original team code. Reports, personal contact details, project-member photos and patent documents are not copied into this public repository. This is a research and learning prototype, not a medical device or diagnostic service.
+All project images come from the supplied original team materials. [Image provenance](docs/visual-sources.json) records their source locations and web-preparation steps. Photos are compressed for web delivery; no generated imagery is presented as project evidence. Original team members retain credit. Personal contact details and administrative documents are excluded.
+
+Public ECG-data attribution and its separate license are in [data/README.md](data/README.md). No blanket license is assigned to the team's original code or design images. This remains a research and learning prototype, not a medical device or diagnostic service.

@@ -1,0 +1,30 @@
+name: Check project showcase
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'demo/**'
+      - 'tests/webpage-smoke.cjs'
+      - '.github/workflows/showcase.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  webpage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-save --package-lock=false playwright@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Check images, responsive layout and interactions
+        run: node tests/webpage-smoke.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: webpage-previews
+          path: outputs/webpage/
