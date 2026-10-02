@@ -4,7 +4,15 @@ A reconstruction of a 2022–2023 student wearable ECG project: Bluetooth acquis
 
 The uploaded project describes a BMD101 ECG chip, a BLE module and flexible electrodes. This repository restores the software and provides a reproducible demo using the supplied MIT-BIH recording. Sensor firmware, PCB CAD files and the original cloud backend were not present in the supplied materials.
 
-## Start with the demo
+## Open the webpage online
+
+The GitHub Pages deployment publishes `demo/` at:
+
+**https://jinxiao-wan.github.io/Wearable-ECG-Monitoring/**
+
+One-time activation: in repository **Settings → Pages → Build and deployment → Source**, select **GitHub Actions**. Then open **Actions → Publish ECG webpage → Run workflow**, keeping branch `main`. The website becomes available after the deployment succeeds. Future changes to `demo/` publish automatically. No local commands, Python installation or sensor are needed to view the webpage.
+
+## Run the demo locally (optional)
 
 ```bash
 git clone https://github.com/jinxiao-wan/Wearable-ECG-Monitoring.git
